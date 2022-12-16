@@ -1,0 +1,62 @@
+.inpute{
+    background-color: blueviolet;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    border: 1px solid black;
+    width: 90%;
+    align-items: center;
+}
+.prediction{
+    background-color: rgb(236, 146, 176);
+    color: black;
+    width: 60%;
+    border: 0;
+    border-radius: 8px;
+    padding: 0.5% 1%;
+    margin: 10px;
+}
+.magic__ball{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15em;
+    height: 15em;
+    border: 2px solid red;
+    border-radius: 50%;
+    background: mistyrose;
+    margin-bottom: 20px;
+}
+.panel{
+    margin-bottom: 40px;
+}
+.panel ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.panel ul.topnav li {float: left;}
+
+.panel ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.panel ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+.panel ul.topnav li a.active {background-color: #4CAF50;}
+
+.panel ul.topnav li.right {float: right;}
+@media  screen and (max-width:600px) {
+    .prediction{
+        padding: 2% 4%;
+    }
+}

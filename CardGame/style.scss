@@ -1,0 +1,173 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: white;
+$border: 1px solid black;
+$font-size: 2em;
+$text-size: 1vw;
+$indents: 1rem;
+$width: 100%;
+$height: 100%;
+$inputsColor: bisque;
+$font-weight: 400;
+$line-height: 1.5;
+$text-colot-input: 212529;
+$background-body-color: #466368;
+$margin-auto: 0 auto;
+$padding-button: 2% 4%;
+$margin-button: 4px 2px;
+$side-height: 500px;
+$number-color:ocean;
+$margin-card:10px;
+$background-topnav:#333;
+$background-topnav-li:#4CAF50;
+
+@mixin transition($property) {
+    transition: border color $property ease-in-out, box-shadow $property ease-in-out;
+}
+@mixin linearGradient($one-color, $two-color, $three-color) {
+    background: linear-gradient(to right, $one-color, $two-color, $three-color);
+}
+
+%flex-option {
+    align-items: center;
+    flex-direction: column;
+}
+
+div{
+    display: flex;
+}
+
+.labels{
+    display: block;
+    margin-bottom: $indents/4;
+    font-size: $indents*2;
+}
+
+.inputs{
+    display: block;
+    width: $width - 10%;
+    background-color: $inputsColor;
+    height: calc(2*$indents + 0.25rem + 2px);
+    padding: $indents/2.7 $indents - 0.25rem;
+    margin-bottom: $indents/10;
+    font-size: $indents + 0.4rem;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    color: $text-colot-input;
+    background-color: $primary-color;
+    background-clip: padding-box;
+    border: $border;
+    border-radius: $indents / 4;
+    @include transition(0.15);
+}
+
+body{
+    background: $background-body-color;
+    @include linearGradient(#f6f1d3, #648880, #293f50);
+    border-radius: 6px;
+}
+
+
+#wrapper{
+    @extend %flex-option;
+    margin: $margin-auto;
+    border: $border;
+    width: $width - 20%;
+}
+
+.submits{
+    @extend %flex-option;
+}
+
+.user__enter{
+    flex-direction: column;
+}
+
+.side{
+    @extend %flex-option;
+    border: $border;
+    height: $side-height;
+}
+
+.randomNumber{
+    align-items: center;
+    justify-content: center;
+    width: $width/2;
+    border-radius: 5px;
+    @if $number-color == tree {
+        background-color: #198b1f;
+    } @else if $number-color== ocean {
+        background-color: #2867db;
+    } 
+}
+
+#generate__side{
+    justify-content: center;
+}
+
+.card{
+    width: $width - 40%;
+    height: $height - 20%;
+    margin-top: $margin-card;
+    margin-bottom: $margin-card;
+    border: $border;
+    background-image: url(./image/6.jpg);
+    background-size: $width $height;
+    background-repeat: no-repeat;
+}
+
+.panel{
+    $margin-card: $margin-button*4;
+    width: 100%;
+}
+.panel ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: $background-topnav;
+}
+
+.panel ul.topnav{
+    float: left;
+}
+
+.panel ul.topnav li a{
+    display: block;
+    color: $primary-color;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.panel ul.topnav li a:hover:not(.active){
+    background-color: #111;
+}
+
+.panel ul.topnav li a:active{
+    background-color: $background-topnav-li;
+}
+
+.panel ul.topnav li.right{
+    float: right;
+}
+
+@media  screen and (max-width:900px) {
+    .card{
+        width: $width - 20%;
+        height: $height - 30%;
+    }
+}
+
+@media  screen and (max-width:700px) {
+    .card{
+        width: $width - 10%;
+        height: $height - 40%;
+    }
+}
+
+@media  screen and (max-width:550px) {
+    .card{
+        width: $width - 20%;
+        height: $height - 60%;
+    }
+}

@@ -1,0 +1,38 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    align-items: center;
+}
+body{
+    background: #466368;
+    background: linear-gradient(to right, #f6f1d3, #648880, #293f50);
+    border-radius: 6px;
+}
+.panel{
+    margin-bottom: 40px;
+}
+.panel ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.panel ul.topnav li {float: left;}
+
+.panel ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.panel ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+.panel ul.topnav li a.active {background-color: #4CAF50;}
+
+.panel ul.topnav li.right {float: right;}

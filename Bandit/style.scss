@@ -1,0 +1,101 @@
+$primary-color: white;
+$border: 1px solid black;
+$font-size: 2em;
+$text-size: 1vw;
+$indents: 1rem;
+$width: 100%;
+$height: 100%;
+$inputsColor: bisque;
+$font-weight: 400;
+$line-height: 1.5;
+$text-colot-input: 212529;
+$margin-auto: 0 auto;
+$margin-top-bottom:10px;
+$letter-size: upper;
+$color-label: #340758;
+
+@mixin transition($property) {
+    transition: border color $property ease-in-out, box-shadow $property ease-in-out;
+}
+@mixin linearGradient($deg, $first-color, $second-color) {
+    background: linear-gradient($deg, $first-color, $second-color) no-repeat;
+} 
+
+%flex-option {
+    align-items: center;
+    flex-direction: column;
+}
+
+div{
+    display: flex;
+}
+
+label{
+    display: block;
+    margin-bottom: $indents/4;
+    font-size: $indents*2;
+    margin-bottom: margin-top-bottom/2;
+    color: $color-label;
+    @if $letter-size == upper{
+        text-transform: uppercase;
+    }@else if letter-size == lower{
+        text-transform: lowercase;
+    }
+}
+
+.inputs{
+    display: block;
+    width: $width - 10%;
+    background-color: $inputsColor;
+    height: calc(2*$indents + 0.25rem + 2px);
+    padding: $indents/2.7 $indents - 0.25rem;
+    margin-bottom: $indents/10;
+    font-size: $indents + 0.4rem;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    color: $text-colot-input;
+    background-color: $primary-color;
+    background-clip: padding-box;
+    border: $border;
+    border-radius: $indents / 4;
+    @include transition(0.15);
+}
+
+body{
+    @include linearGradient(4deg, #5462c3, #ba872c);
+    height: $height;
+    border-radius: 6px;
+}
+
+html{
+    height: $height;
+}
+
+#wrapper{
+    @extend %flex-option;
+    margin: $margin-auto;
+    border: $border;
+    width: $width - 20%;
+}
+
+.submits{
+    @extend %flex-option;
+}
+
+.user__enter{
+    flex-direction: column;
+}
+
+.containers{
+    width: $width;
+    height: 300px;
+    justify-content: center;
+    margin-top: $margin-top-bottom;
+    margin-bottom: $margin-top-bottom;
+}
+
+@media screen and (max-width: 275px) {
+    #wrapper{
+        border: none;
+    }
+}
